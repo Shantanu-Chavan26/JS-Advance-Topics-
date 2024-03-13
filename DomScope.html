@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Scope</title>
+</head>
+<body>
+    
+
+    <h1>Scope in Javascript</h1>
+
+
+    <script>
+        var variable = "this is global scope"
+
+        function locallvar()
+        {   accidentalvar = "This is a variable without the var keyword forgot"
+            var variable = "this is local scope"
+        }
+        
+     console.log( locallvar())
+
+     //use strict start to avoid keeping varibles in global scope 
+
+     "use strict"
+
+     display = "The use strict dosent allow us to declare any variable without the var keyword"
+
+
+     //Const and Let
+
+     //using CONST keyword to declare a variable, keeping the variable value constant throughout the code and function and the value cant be changed eg:
+
+     const message = "Varible declared using const keyword";
+
+     console.log(message);
+
+     message = "eRROR incurred when tired to change the value of the variable"
+
+     //Let
+     for(let i = 0 ; i<message.length  ; i++)
+     {
+        console.log(i);
+     }
+
+     console.log(` ${i}`); // calling variable i hence the `` sign.
+
+     //hoisting 
+     //this means declaring the variables after calling them this allows us to find any sort of errors in the scope before hand when var is called with CONST and LET.
+     console.log(message1);
+     const message1 = "Shantanu";
+     
+
+     //direct function invoke 
+    //Never use global variable wherein we directly run the function and all its variables globally.
+
+    (function(){
+        const A = alert("Nver use var in global scope");
+        console.log(A);
+    }())
+     
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Properties</title>
+</head>
+<body>
+
+    <div class="IH">
+        <p>Hello world</p>
+    </div>
+
+    <button>Hello World</button>
+    
+    <div>
+        <p>Inserting text nodes</p>
+    </div>
+
+
+    
+    <script>
+        //INNER HTML changes html of the component.
+
+        var InnerH = document.querySelector('.IH');
+        InnerH.innerHTML="Inner html used";
+
+        //element with an ID call by using '#IH' and element with className use '.IH'
+
+       //****Element Methods****
+
+       //set Attribute
+       const button = document.querySelector("button");
+       button.setAttribute("name", "helloButton");
+
+       //Creating Elements and Text Nodes
+       var myDiv = document.querySelector('div');
+
+       var myText = document.createTextNode("Added text nodes in the paragraph");
+       myDiv.appendChild(myText);
+      
+
+       //Remove child 
+       var myDIV = document.querySelector('div');
+       myDiv.removeChild(myDIV.children[1]);
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Structre demo</title>
+</head>
+<body>
+    <p id="Upper-Container">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit iusto, rem, dolorem perspiciatis accusantium maiores fuga similique pariatur corporis, amet ducimus facere voluptas reprehenderit. Nulla temporibus assumenda sequi a libero!
+    Cupiditate quas nihil accusamus laborum iure quisquam minima, praesentium unde voluptatum qui quos quaerat ex culpa? Rem nostrum aliquid neque dolorem molestias repudiandae ut, itaque aspernatur soluta rerum odio? Facilis?</p>
+    <br>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe sit eligendi velit molestiae ducimus, cum tempore voluptas cumque. Sequi, eum dignissimos sint blanditiis accusamus iure perferendis facilis animi cum voluptatibus.
+    Veritatis necessitatibus voluptatibus voluptatem dolores vitae modi earum tenetur, recusandae doloremque maxime, reiciendis sit sed voluptas asperiores? Obcaecati tempora quidem eos ab consectetur asperiores ducimus suscipit qui modi! Impedit, minus?
+    Necessitatibus aut ea in ducimus quod ipsum rerum enim odit maiores assumenda, adipisci, corrupti soluta cum nulla odio voluptate a sit rem ullam magnam doloremque blanditiis. Quasi animi dolorum tenetur!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum illo at illum temporibus? Sed soluta ullam aspernatur distinctio, ratione aut, architecto quam iste maiores culpa temporibus delectus exercitationem voluptatibus cum!
+    Error ipsum minus ducimus doloremque, sapiente aperiam magnam neque ipsam officia inventore asperiores nesciunt eaque, dolore dolores officiis debitis? Earum rerum laborum sapiente sit eum alias vel magni, corporis obcaecati?
+    Similique inventore nulla ab alias maxime corporis molestiae aliquam officiis cupiditate autem nam, dicta, architecto ipsum ipsam. Quis corporis, illo accusantium, soluta, in provident nisi asperiores saepe ducimus repellendus maxime?</p>
+    
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo nihil quam itaque ipsum perferendis quis asperiores! Vero ducimus totam voluptas quidem et mollitia praesentium velit ab. Quisquam in at cum.
+    Eos dolore doloremque esse! Voluptate atque totam repellendus. Quos veritatis, nulla vel pariatur animi tenetur magni dolore quisquam facere cum numquam ipsa eos impedit, quidem culpa aspernatur accusamus cumque amet.
+    Hic architecto aliquam quibusdam sapiente nesciunt voluptates consequuntur modi quasi repellendus, illum id eveniet eius laboriosam magni eaque sint, quo reprehenderit, iusto maxime animi autem rem ad. Eveniet, ea officia!</p>
+
+
+
+  
+     <h1 class="Dom">getElementsByClassNameDemo</h1>
+
+
+    <div id="special">
+      <p >Here is a paragraph</p>
+    </div>
+     
+
+    <div class="All">
+    <p>Query</p>
+    <p>Selector</p>
+    <p>All</p>
+    </div>
+     
+
+     
+     
+
+    <script>
+
+
+        document.getElementById("Upper-Container").style.color="red"; //getElementById chooses the specific colors. 
+        
+       //This DOM tag selects multiple sections of the html with the same tag at once we need a loop to make changes.
+
+
+
+
+       var multiplePara= document.getElementsByTagName("p");
+        for(var i=0 ; i<multiplePara.length ; i++)
+        {
+            multiplePara[i].style.color="orange";
+        }
+
+
+
+
+        //getElementsByClassName
+        var ClasPara = document.getElementsByClassName("Dom");
+        ClasPara[0].style.color="brown"; //Could use loop but the class element is only 1.
+
+
+
+
+        //QUERY SELECTORS selects only one component of the div here.
+        var Mytext = document.querySelector('#special .someclass');
+        Mytext.style.color="Blue";
+
+
+        //Query Selector All selects all the componts of the particular query.
+        var All = document.querySelectorAll('All');
+
+        for(var i=0 ; i<All.length ; i++)
+        {
+            All[i].style.color="Grey";
+        }
+
+        //Arrow Function
+
+        //instead of this 
+
+        let sum = function(a,b){
+            console.log(a+b);
+
+        }
+         console.log(sum(2,5));
+
+         //WE USE: 
+         
+        let sum2 =(a,b) => a+b;
+
+        console.log (sum(2,5));
+        
+</script>
+
+</body>
+</html>

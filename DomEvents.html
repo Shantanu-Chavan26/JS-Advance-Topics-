@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {width:50px;
+    height: 50px;
+    background-color :red;
+    }
+</style>
+<body>
+   <h1>Javascript Events</h1>
+   <button>Dont press</button>
+
+   <a href="http://google.com">Link to google</a>
+
+   <form method="get">
+    <label for="Name">Name: <input type="text" name="name" id=""></label>
+    <input type="submit" value="Submit">
+
+   </form>
+
+   <h1>Mouse Event tutorial</h1>
+   <div></div>
+
+
+
+    <script>
+     var btn = document.querySelector('button');
+
+    //  btn.onclick=function()
+    //  { 
+    //     alert("Dont press");
+
+    //  }
+
+     //AddEventListener adds multiple events
+
+     btn.addEventListener('click' , function(){
+        alert("Dont press");
+     }); 
+
+     //EventObject 
+      
+     btn.addEventListener('click' , function(){
+        event.target.style.backgroundColor="red";
+        alert("Dont press");
+     })
+
+     var preventDefault = document.querySelector('a');
+     preventDefault.addEventListener('click' , function(event){
+        
+        event.preventDefault();
+
+        alert("Event Object removes the default working of the browser");
+
+    //Submit Event
+
+    var Sub = document.querySelector('form');
+
+    Sub.addEventListener('submit' , function(event)
+    { 
+        event.preventDefault();
+
+        var formData = document.querySelector('input').value;
+
+        alert(formData);
+
+    });
+
+
+    //MouseOver , MouseOut 
+
+    var heading = document.querySelector('h1');
+    var mydiv = document.querySelector('div');
+
+    mydiv.addEventListener('mouseover' , function()
+    {
+        heading.innerHTML = "The heading changes!";
+    });
+
+    mydiv.addEventListener('mouseout' , function(){
+
+        heading.innerHTML = "The heading changes again!!"});
+
+    heading.addEventListener('mouseover' , function(){
+        heading.innerHTML = "Back to its original state";
+    });
+
+ //Scroll Events 
+ //this tells the amount of pixels scrolled in the webpage.
+       var pagetop;
+       window.addEventListener('scroll' , function()
+{    
+    pagetop = window.pageYOffset;
+    console.log(pagetop);
+    
+}) ;
+
+
+//Getting a specific form element.
+  
+var Name =  event.target.element['name'].value;
+   
+
+
+    
+    </script>
+</body>
+</html>

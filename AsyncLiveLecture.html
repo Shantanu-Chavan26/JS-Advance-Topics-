@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+     //closure in Js (Function inside Function)
+    function Outside()
+     {
+        var a =2;
+
+        function Inside()
+        {
+            console.log(a); // now var A isnt there in Inside function so now it will search VAR a in its lexical scope ie outside function this is closure.
+        }
+     }
+
+     //Async JavaScript INTERVIEW SPECIFIC!
+
+    //  Stopping a particular function of delaying it to run some other function 
+
+    //SetTimeout for Async Javascript.
+//This function returns the value after 2 seconds break and proving Async 
+
+setTimeout(() => {
+    console.log("Shan");
+}, 2000);
+
+console.log("GM");
+
+function loadingData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("Loading Data");
+            resolve("Hello");
+        }, 2000);
+    });
+}
+
+function CollectingData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("Collecting Data");
+            resolve();
+        }, 3000);
+    });
+}
+
+function ProcessingData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("Processing Data");
+            resolve();
+        }, 4000);
+    });
+}
+
+function ProcessedData() {
+    return new Promise((resolve ,reject) => {
+        setTimeout(() => {
+        console.log("Processed Data");
+        resolve();
+    }, 5000);
+    })
+  
+}
+
+async function x() {
+    await loadingData();
+    await CollectingData();
+    await ProcessingData();
+    await ProcessedData();
+}
+
+x().catch(err => console.log(err));
+
+
+
+
+//Error Handling
+//TRY , CATCH , THROW
+
+function d (a,b)
+{  
+    try{
+        if (b==0)
+        {
+            throw new Error("Cant Divide by Zero ")
+        }
+        else 
+        {
+            return a/b;
+        }
+    }
+    catch(err){
+        console.log(err.message)
+    }
+    
+}
+
+console.log(d(10,0));
+
+
+
+//Higher Order Functions
+//MAP:
+let num = [1,2,3,4,5,6];
+
+let a =num.map((val)=> {
+
+    return val;
+
+})
+console.log(a);
+
+//Filter:
+num.filter(val =>{
+    if(val>10 && val<=25)
+    {
+        return val;
+    }
+})
+console.log(num);
+
+//Reduce
+
+var sum = num.reduce(function(acc , number){
+
+    return acc + number; //stores the prv number and add the next number in the nums array defined.
+
+},0)
+
+console.log(sum);
+
+
+//Fetch
+// Here you fetch any file or api and in a particular file formatxcfg
+fetch('myfile.txt')
+.then(response => {
+    return response.json();
+    
+})
+.then (data=>{
+    console.log(data)
+})
+.catch(err => {
+    console.log('error')
+});
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+//Object and Array Objects
+// let obj = {
+//     name: "Bravo",
+//     age: 20,
+//     fun: function () {
+//         console.log("I am a function");
+//     }
+// };
+
+// console.log(obj.age);
+
+// let arr = [
+//     {
+//         user: 1,
+//         Name: "Shan"
+//     },
+//     {
+//         user: 2,
+//         Name: "Tintin"
+//     },
+//     {
+//         user: 3,
+//         Name: "Donny"
+//     }
+// ];
+
+// console.log(arr);
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
